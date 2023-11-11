@@ -20,7 +20,11 @@ Database = {
 
 def getData():
     infile = open(os.getcwd()+"\\Percobaan\\database.txt","r").readlines()
+
+    # a = Baris Data
     a=0
+
+    # b = akun1,2,3
     b=1
     for i in infile:
         a=a+1
@@ -37,6 +41,7 @@ def getData():
 def setData(id,pin):
     Database[id]['pin']=pin
     outfile = open(os.getcwd()+"\\Percobaan\\database.txt","w")
+    # range = 1,2,3
     for i in range(1,4):
         outfile.write(str(Database['akun'+str(i)]['nama'])+'\n')
         outfile.write(str(Database['akun'+str(i)]['pin'])+'\n')
@@ -44,7 +49,10 @@ def setData(id,pin):
     outfile.close()
 
 def main():
+    # Ambil data
     getData()
+
+    # Edit data
     setData('akun1',92857984257)
     
 main()
